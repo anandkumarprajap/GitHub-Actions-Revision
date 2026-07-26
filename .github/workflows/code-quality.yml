@@ -10,10 +10,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Code Checkout
-              uses: actions/checkout@v7
+              uses: actions/checkout@v4
             
             - name: Setup NodeJs
-              uses: actions/setup-node@v6
+              uses: actions/setup-node@v4
               with:
                 node-version: '20'
                 cache: npm
@@ -28,16 +28,16 @@ jobs:
               working-directory: frontend
 
             - name: Setup Go
-              uses: actions/setup-go@v6
+              uses: actions/setup-go@v5
               with:
                 go-version: '1.23'
-                go-version-file: 'go.mod'
-                cache-dependency-path: go.sum
+                go-version-file: 'backend/go.mod'
+                cache-dependency-path: backend/go.sum
             
             - name: Run Go Formatter
-              run: go fmt
+              run: go fmt ./...
               working-directory: backend
 
             - name: Run Go Vet
-              run: go vet
-              working-directory: backend
+              run: go vet ./...
+              working-directory: backend
