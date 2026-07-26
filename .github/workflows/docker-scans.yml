@@ -14,7 +14,7 @@ jobs:
                 folders: ['backend','frontend']
         steps:
             - name: Code Checkout
-              uses: actions/checkout@v7
+              uses: actions/checkout@v4
 
             - name: ${{ matrix.folders}} Dockerfile Lint
               uses: hadolint/hadolint-action@v3.1.0
