@@ -27,5 +27,5 @@ jobs:
               with:
                 context: ./${{ matrix.folders}}
                 push: true
-                tags: ${{ vars.DOCKERHUB_USERNAME }}/devboard-${{ matrix.folders}}:latest
+                tags: ${{ vars.DOCKERHUB_USERNAME }}/github-actions-revision-${{ matrix.folders}}:latest
                 
