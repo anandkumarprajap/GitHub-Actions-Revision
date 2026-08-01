@@ -9,6 +9,7 @@ spec:
     app: devboard-frontend
   ports:
     - protocol: TCP
-      port: 30080      # The port you want to expose outside
+      port: 8080      # The port you want to expose outside
       targetPort: 4173 # The port your frontend container is listening on
-
+      nodePort: 30080
+  type: NodePort    
